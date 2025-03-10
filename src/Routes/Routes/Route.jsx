@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { API } from "../../backend";
 import EditProfile from '../../pages/UserProfile/EditProfile'
 import MainLayout from "../../layout/MainLayout";
-import UserProfile from "../../Pages/UserProfile/UserProfile";
+import UserProfile from '../../pages/UserProfile/UserProfile';
 import Overview from "../../Pages/Dashboard/Overview";
 import MotelYourHome from "../../Pages/MotelYourHome";
 import Reservations from "../../Pages/Dashboard/Reservations";
