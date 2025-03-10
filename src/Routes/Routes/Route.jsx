@@ -1,76 +1,77 @@
 import { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { API } from "../../backend";
-import EditProfile from '../../pages/UserProfile/EditProfile'
+
+// Layout imports
 import MainLayout from "../../layout/MainLayout";
-import UserProfile from '../../pages/UserProfile/UserProfile';
-import Overview from "../../Pages/Dashboard/Overview";
-import MotelYourHome from "../../Pages/MotelYourHome";
-import Reservations from "../../Pages/Dashboard/Reservations";
-import Listing from "../../Pages/Dashboard/Listing";
 import CreateNewListLayout from "../../layout/CreateNewListLayout";
-import ListHouseOverview from "../../Pages/ListHouseOverview";
-import ListHouseStepOne from "../../Pages/ListingHouseStepOne/ListHouseStepOne";
-import ListHouseStepOneStructure from "../../Pages/ListingHouseStepOne/ListHouseStepOneStructure";
-import ListHouseStepOnePlacetype from "../../Pages/ListingHouseStepOne/ListHouseStepOnePlacetype";
+
+// Direct imports for smaller components
+import EditProfile from '../../pages/UserProfile/EditProfile'
+import UserProfile from '../../pages/UserProfile/UserProfile';
+import Overview from "../../pages/Dashboard/Overview";
+import MotelYourHome from "../../pages/MotelYourHome";
+import Reservations from "../../pages/Dashboard/Reservations";
+import Listing from "../../pages/Dashboard/Listing";
+import ListHouseOverview from "../../pages/ListHouseOverview";
+import ListHouseStepOne from "../../pages/ListingHouseStepOne/ListHouseStepOne";
+import ListHouseStepOneStructure from "../../pages/ListingHouseStepOne/ListHouseStepOneStructure";
+import ListHouseStepOnePlacetype from "../../pages/ListingHouseStepOne/ListHouseStepOnePlacetype";
+
+// UI Components
 import { FadeLoader } from "react-spinners";
-// import ListingHouseStepOneAddress from "../../Pages/ListingHouseStepOne/ListingHouseStepOneAddress";
-// import ListingHouseStepOneFloorPlan from "../../Pages/ListingHouseStepOne/ListingHouseStepOneFloorPlan";
-// import StepTwoOverview from "../../Pages/ListingHouseStepTwo/StepTwoOverview";
-// import Amenities from "../../Pages/ListingHouseStepTwo/Amenities";
-// import ListingHousePhotos from "../../Pages/ListingHouseStepTwo/ListingHousePhotos";
-// import HouseTitle from "../../Pages/ListingHouseStepTwo/HouseTitle";
-// import Highlight from "../../Pages/ListingHouseStepTwo/Highlight";
-// import Description from "../../Pages/ListingHouseStepTwo/Description";
-// import FinalStepOverview from "../../Pages/ListingHouseFinalStep/FinalStepOverview";
-// import Visibility from "../../Pages/ListingHouseFinalStep/Visibility";
-// import Pricing from "../../Pages/ListingHouseFinalStep/Pricing";
-// import Legal from "../../Pages/ListingHouseFinalStep/Legal";
-// import Receipt from "../../Pages/ListingHouseFinalStep/Receipt";
-// import Thankyou from "../../Pages/ListingHouseFinalStep/Thankyou";
-// import Home from "../../Pages/Home"; = lazy (() => import)
+
+// Lazy loaded components
+const Home = lazy(() => import("../../pages/Home"));
+const ListingDetails = lazy(() => import("../../pages/ListingDetails"));
+const Book = lazy(() => import("../../pages/Book"));
+const PaymentConfirmed = lazy(() => import("../../pages/PaymentConfirmed"));
+
+// Lazy loaded listing steps
 const ListingHouseStepOneAddress = lazy(() =>
-  import("../../Pages/ListingHouseStepOne/ListingHouseStepOneAddress")
+  import("../../pages/ListingHouseStepOne/ListingHouseStepOneAddress")
 );
 const ListingHouseStepOneFloorPlan = lazy(() =>
-  import("../../Pages/ListingHouseStepOne/ListingHouseStepOneFloorPlan")
+  import("../../pages/ListingHouseStepOne/ListingHouseStepOneFloorPlan")
 );
 const StepTwoOverview = lazy(() =>
-  import("../../Pages/ListingHouseStepTwo/StepTwoOverview")
+  import("../../pages/ListingHouseStepTwo/StepTwoOverview")
 );
 const Amenities = lazy(() =>
-  import("../../Pages/ListingHouseStepTwo/Amenities")
+  import("../../pages/ListingHouseStepTwo/Amenities")
 );
 const ListingHousePhotos = lazy(() =>
-  import("../../Pages/ListingHouseStepTwo/ListingHousePhotos")
+  import("../../pages/ListingHouseStepTwo/ListingHousePhotos")
 );
 const HouseTitle = lazy(() =>
-  import("../../Pages/ListingHouseStepTwo/HouseTitle")
-);
-const Home = lazy(() => import("../../Pages/Home"));
-const ListingDetails = lazy(() => import("../../Pages/ListingDetails"));
-// import Book from "../../Pages/Book";
-const Book = lazy(() => import("../../Pages/Book"));
-const PaymentConfirmed = lazy(() => import("../../Pages/PaymentConfirmed"));
-const Thankyou = lazy(() =>
-  import("../../Pages/ListingHouseFinalStep/Thankyou")
-);
-const Receipt = lazy(() => import("../../Pages/ListingHouseFinalStep/Receipt"));
-const Legal = lazy(() => import("../../Pages/ListingHouseFinalStep/Legal"));
-const Pricing = lazy(() => import("../../Pages/ListingHouseFinalStep/Pricing"));
-const Visibility = lazy(() =>
-  import("../../Pages/ListingHouseFinalStep/Visibility")
-);
-const FinalStepOverview = lazy(() =>
-  import("../../Pages/ListingHouseFinalStep/FinalStepOverview")
-);
-const Description = lazy(() =>
-  import("../../Pages/ListingHouseStepTwo/Description")
+  import("../../pages/ListingHouseStepTwo/HouseTitle")
 );
 const Highlight = lazy(() =>
-  import("../../Pages/ListingHouseStepTwo/Highlight")
+  import("../../pages/ListingHouseStepTwo/Highlight")
 );
-// import PaymentConfirmed from "../../Pages/PaymentConfirmed";
+const Description = lazy(() =>
+  import("../../pages/ListingHouseStepTwo/Description")
+);
+
+// Lazy loaded final steps
+const FinalStepOverview = lazy(() =>
+  import("../../pages/ListingHouseFinalStep/FinalStepOverview")
+);
+const Visibility = lazy(() =>
+  import("../../pages/ListingHouseFinalStep/Visibility")
+);
+const Pricing = lazy(() =>
+  import("../../pages/ListingHouseFinalStep/Pricing")
+);
+const Legal = lazy(() =>
+  import("../../pages/ListingHouseFinalStep/Legal")
+);
+const Receipt = lazy(() => 
+  import("../../pages/ListingHouseFinalStep/Receipt")
+);
+const Thankyou = lazy(() =>
+  import("../../pages/ListingHouseFinalStep/Thankyou")
+);
 
 const router = createBrowserRouter([
   {
