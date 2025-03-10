@@ -1,10 +1,10 @@
 import axios from "axios";
 
-export const API = "backend-production-3d21.up.railway.app/";
+export const API = "https://gurleen.up.railway.app/";
 // export const API = "https://backend-api-jc-production.up.railway.app/";
 
 const api = axios.create({
-  baseURL: "backend-production-3d21.up.railway.app/",
+  baseURL: "https://gurleen.up.railway.app/",
   // baseURL: "https://backend-api-jc-production.up.railway.app/",
 });
 
