@@ -1,7 +1,7 @@
 import { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { API } from "../../backend";
-import EditProfile from "../../Pages/UserProfile/EditProfile";
+import EditProfile from '../../pages/UserProfile/EditProfile'
 import MainLayout from "../../layout/MainLayout";
 import UserProfile from "../../Pages/UserProfile/UserProfile";
 import Overview from "../../Pages/Dashboard/Overview";
