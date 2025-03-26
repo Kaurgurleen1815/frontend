@@ -1,10 +1,10 @@
 import axios from "axios";
 
-export const API = "https://backend-production-4e1c.up.railway.app/";
+export const API = "https://back-end-paoz.onrender.com/";
 // export const API = "https://backend-api-jc-production.up.railway.app/";
 
 const api = axios.create({
-  baseURL: "https://backend-production-4e1c.up.railway.app/",
+  baseURL: "https://back-end-paoz.onrender.com/",
   // baseURL: "https://backend-api-jc-production.up.railway.app/",
 });
 
